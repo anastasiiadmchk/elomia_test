@@ -1,4 +1,3 @@
-import 'package:elomia_test/blocs/bloc_provider.dart';
 import 'package:elomia_test/routes.dart';
 import 'package:elomia_test/theme/theme.dart';
 import 'package:flutter/material.dart';
@@ -20,19 +19,6 @@ class _MyAppState extends State<MyApp> {
 
   @override
   void initState() {
-    BlocProvider.instance.processingBloc.processingResult.listen((msg) {
-      if (hasOnScreenDialog) {
-        final outterContext = navKey.currentState!.overlay!.context;
-        Navigator.of(outterContext).canPop();
-      }
-    });
-
-    BlocProvider.instance.processingBloc.isLoading.listen((status) {
-      if (hasOnScreenDialog) {
-        final outterContext = navKey.currentState!.overlay!.context;
-        Navigator.of(outterContext).canPop();
-      }
-    });
     super.initState();
   }
    @override
